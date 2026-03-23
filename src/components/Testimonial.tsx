@@ -39,8 +39,7 @@ export function Testimonial() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          Работа с Wabi была похожа на медитацию. Они поняли, что наш дом должен поддерживать
-          благополучие семьи, а не просто красиво выглядеть. Результат — пространство, которое наконец ощущается как наше.
+          Идеология — это не просто набор идей. Это способ, которым государство объясняет себя самому себе и своим гражданам, придавая власти смысл и легитимность.
         </blockquote>
 
         {/* Attribution */}
@@ -49,8 +48,8 @@ export function Testimonial() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <p className="text-sm tracking-widest uppercase text-primary-foreground/80">Анна и Михаил Петровы</p>
-          <p className="text-sm text-primary-foreground/60 mt-1">Резиденция в Москве</p>
+          <p className="text-sm tracking-widest uppercase text-primary-foreground/80">Клод Леви-Стросс</p>
+          <p className="text-sm text-primary-foreground/60 mt-1">Структурная антропология</p>
         </div>
       </div>
     </section>

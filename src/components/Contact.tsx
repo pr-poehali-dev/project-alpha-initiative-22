@@ -1,13 +1,15 @@
-import type React from "react"
 import { useEffect, useRef, useState } from "react"
+
+const sources = [
+  { author: "Уваров С.С.", work: "Доклад Николаю I об основах народного просвещения, 1833" },
+  { author: "Ключевский В.О.", work: "Курс русской истории" },
+  { author: "Бердяев Н.А.", work: "Истоки и смысл русского коммунизма" },
+  { author: "Пайпс Р.", work: "Россия при старом режиме" },
+  { author: "Коржихина Т.П., Сенин А.С.", work: "История российской государственности" },
+]
 
 export function Contact() {
   const [isVisible, setIsVisible] = useState(false)
-  const [formState, setFormState] = useState({
-    name: "",
-    email: "",
-    message: "",
-  })
   const sectionRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
@@ -27,12 +29,6 @@ export function Contact() {
     return () => observer.disconnect()
   }, [])
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Handle form submission
-    console.log(formState)
-  }
-
   return (
     <section ref={sectionRef} id="contact" className="py-32 lg:py-40 px-6 lg:px-12">
       <div className="max-w-7xl mx-auto">
@@ -44,107 +40,68 @@ export function Contact() {
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
             >
-              Контакты
+              Список источников
             </p>
             <h2
               className={`font-serif text-4xl md:text-5xl lg:text-6xl font-light text-foreground mb-8 text-balance transition-all duration-1000 delay-200 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              Готовы начать?
+              Библиография
             </h2>
             <p
               className={`text-muted-foreground leading-relaxed mb-12 max-w-md transition-all duration-1000 delay-300 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              Каждое осмысленное пространство начинается с разговора. Расскажите о вашем видении,
-              и мы вместе найдём способ воплотить его в жизнь.
+              Доклад основан на ключевых трудах отечественных и зарубежных исследователей
+              истории российской государственности и политической мысли.
             </p>
 
-            {/* Contact Info */}
             <div
               className={`space-y-6 transition-all duration-1000 delay-400 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              <div>
-                <p className="text-xs tracking-widest uppercase text-muted-foreground mb-2">Почта</p>
-                <a href="mailto:hello@example.com" className="text-foreground hover:text-sage transition-colors">
-                  hello@example.com
-                </a>
-              </div>
-              <div>
-                <p className="text-xs tracking-widest uppercase text-muted-foreground mb-2">Локация</p>
-                <p className="text-foreground">Москва и Санкт-Петербург</p>
-              </div>
+              {sources.map((source, index) => (
+                <div key={index} className="border-l-2 border-sage pl-4">
+                  <p className="text-foreground font-medium">{source.author}</p>
+                  <p className="text-muted-foreground text-sm mt-1">{source.work}</p>
+                </div>
+              ))}
             </div>
           </div>
 
-          {/* Right Column - Form */}
+          {/* Right Column - Conclusion */}
           <div
             className={`transition-all duration-1000 delay-500 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            <form onSubmit={handleSubmit} className="space-y-8">
-              <div>
-                <label htmlFor="name" className="block text-xs tracking-widest uppercase text-muted-foreground mb-3">
-                  Имя
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  value={formState.name}
-                  onChange={(e) => setFormState({ ...formState, name: e.target.value })}
-                  className="w-full bg-transparent border-b border-border py-3 text-foreground placeholder:text-muted-foreground/50 focus:border-sage focus:outline-none transition-colors"
-                  placeholder="Ваше имя"
-                  required
-                />
+            <p className="text-xs tracking-[0.3em] uppercase text-terracotta mb-6">Выводы</p>
+            <div className="space-y-8">
+              <div className="bg-sand/50 p-8">
+                <h3 className="font-serif text-2xl text-foreground mb-4">Преемственность форм</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Несмотря на революционные смены режимов, российская государственная идеология сохраняла
+                  устойчивое ядро: мессианство, державность и приоритет государства над личностью.
+                </p>
               </div>
-              <div>
-                <label htmlFor="email" className="block text-xs tracking-widest uppercase text-muted-foreground mb-3">
-                  Почта
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  value={formState.email}
-                  onChange={(e) => setFormState({ ...formState, email: e.target.value })}
-                  className="w-full bg-transparent border-b border-border py-3 text-foreground placeholder:text-muted-foreground/50 focus:border-sage focus:outline-none transition-colors"
-                  placeholder="ваш@email.com"
-                  required
-                />
+              <div className="bg-sand/50 p-8">
+                <h3 className="font-serif text-2xl text-foreground mb-4">Роль кризисов</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Каждый идеологический перелом был спровоцирован системным кризисом — военным, экономическим
+                  или легитимационным. Идеология менялась как ответ на вызов, а не как результат органической эволюции.
+                </p>
               </div>
-              <div>
-                <label htmlFor="message" className="block text-xs tracking-widest uppercase text-muted-foreground mb-3">
-                  Сообщение
-                </label>
-                <textarea
-                  id="message"
-                  value={formState.message}
-                  onChange={(e) => setFormState({ ...formState, message: e.target.value })}
-                  rows={4}
-                  className="w-full bg-transparent border-b border-border py-3 text-foreground placeholder:text-muted-foreground/50 focus:border-sage focus:outline-none transition-colors resize-none"
-                  placeholder="Расскажите о вашем проекте..."
-                  required
-                />
+              <div className="bg-sand/50 p-8">
+                <h3 className="font-serif text-2xl text-foreground mb-4">Современный контекст</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Поиск национальной идентичности в современной России воспроизводит исторически знакомые паттерны:
+                  апелляцию к особому пути, традиционным ценностям и исторической миссии государства.
+                </p>
               </div>
-              <button
-                type="submit"
-                className="group inline-flex items-center gap-3 px-8 py-4 bg-sage text-primary-foreground text-sm tracking-widest uppercase hover:bg-sage/90 transition-all duration-500"
-              >
-                Отправить
-                <svg
-                  className="w-4 h-4 transition-transform duration-500 group-hover:translate-x-1"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </button>
-            </form>
+            </div>
           </div>
         </div>
       </div>

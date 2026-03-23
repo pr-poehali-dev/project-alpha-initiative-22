@@ -33,10 +33,9 @@ export function Philosophy() {
           >
             <img
               src="/minimalist-japanese-interior-design-with-natural-w.jpg"
-              alt="Минималистичный интерьер с натуральным деревом"
+              alt="Государственная идеология России"
               className="absolute inset-0 w-full h-full object-cover"
             />
-            {/* Overlay accent */}
             <div className="absolute bottom-0 left-0 w-24 h-24 bg-terracotta/80" />
           </div>
 
@@ -47,7 +46,7 @@ export function Philosophy() {
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
             >
-              Наша философия
+              О теме исследования
             </p>
 
             <h2
@@ -55,10 +54,10 @@ export function Philosophy() {
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              Искусство
-              <span className="italic"> осознанной</span>
+              Идеология как
+              <span className="italic"> инструмент</span>
               <br />
-              жизни
+              власти
             </h2>
 
             <div
@@ -67,13 +66,13 @@ export function Philosophy() {
               }`}
             >
               <p>
-                Мы верим, что каждое пространство таит в себе потенциал для преображения. Не через добавление,
-                а через бережное вычитание — открывая то, что всегда было предначертано.
+                Государственная идеология в России всегда выступала не просто как совокупность идей,
+                но как системообразующий механизм легитимации власти и консолидации общества.
               </p>
               <p>
-                Наш подход вдохновлён японской концепцией <em className="text-foreground">ма</em> — глубокой
-                красотой пустоты — и скандинавским пониманием
-                <em className="text-foreground"> хюгге</em>, этого ощущения уютного умиротворения.
+                От формулы <em className="text-foreground">«Православие. Самодержавие. Народность»</em> Уварова
+                до советского марксизма-ленинизма — каждая эпоха создавала собственный
+                <em className="text-foreground"> идеологический проект</em>, отражавший логику времени.
               </p>
             </div>
 
@@ -84,16 +83,16 @@ export function Philosophy() {
               }`}
             >
               <div>
+                <p className="font-serif text-3xl md:text-4xl text-sage">5</p>
+                <p className="text-xs tracking-widest uppercase text-muted-foreground mt-2">Ключевых эпох</p>
+              </div>
+              <div>
+                <p className="font-serif text-3xl md:text-4xl text-sage">300+</p>
+                <p className="text-xs tracking-widest uppercase text-muted-foreground mt-2">Лет истории</p>
+              </div>
+              <div>
                 <p className="font-serif text-3xl md:text-4xl text-sage">12</p>
-                <p className="text-xs tracking-widest uppercase text-muted-foreground mt-2">Лет опыта</p>
-              </div>
-              <div>
-                <p className="font-serif text-3xl md:text-4xl text-sage">140+</p>
-                <p className="text-xs tracking-widest uppercase text-muted-foreground mt-2">Проектов</p>
-              </div>
-              <div>
-                <p className="font-serif text-3xl md:text-4xl text-sage">8</p>
-                <p className="text-xs tracking-widest uppercase text-muted-foreground mt-2">Наград</p>
+                <p className="text-xs tracking-widest uppercase text-muted-foreground mt-2">Источников</p>
               </div>
             </div>
           </div>
